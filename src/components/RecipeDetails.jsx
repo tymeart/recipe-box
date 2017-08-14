@@ -3,9 +3,13 @@ import React, { Component } from 'react';
 const RecipeDetails = (recipe) => {
   return (
     <div>
-      <h2>{recipe.title}</h2>
+      <h2>Recipe Title</h2>
+      <button>Edit</button>
+      <button>Delete</button>
       <h3>Ingredients</h3>
-      <ul>{recipe.ingredients}</ul>
+      <ul>Ingredients List</ul>
     </div>
   );
 }
+
+export default RecipeDetails;
