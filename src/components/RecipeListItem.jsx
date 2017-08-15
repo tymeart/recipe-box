@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const RecipeListItem = (recipe) => {
+const RecipeListItem = (props) => {
   return (
-    <li>{recipe.title}</li>
+    <li>{props.recipe.title}</li>
   );
 }
 

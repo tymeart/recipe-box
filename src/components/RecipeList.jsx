@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+import RecipeListItem from './RecipeListItem';
 
-class RecipeList extends Component {
-  render() {
-    return (
-      <ul>
-        {this.props.recipes.map(recipe => <li>{recipe.title}</li>)}
-      </ul>
-    );
-  }
+const RecipeList = (props) => {
+  const recipeItems = props.recipes.map(recipe => <RecipeListItem recipe={recipe} />);
+  return (
+    <ul>
+      {recipeItems}
+    </ul>
+  );
 }
 
 export default RecipeList;
