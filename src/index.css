@@ -1,5 +1,53 @@
 body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+}
+
+.App {
+  display: flex;
+}
+
+.Sidebar {
+  border-right: 1px solid #DDD;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  height: 100vh;
+  overflow-y: auto;
+  width: 22vw;
+}
+
+.Sidebar h1 {
+  padding: 0 1rem;
+}
+
+.Sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Sidebar li {
+  border-top: 1px solid #DDD;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.Sidebar li:last-child {
+  border-bottom: 1px solid #DDD;
+}
+
+.Sidebar button {
+  align-self: center;
+  font-size: 1rem;
+  height: 30px;
+  width: 10rem;
+}
+
+.RecipeDetails {
+  padding: 1rem;
+  width: 80vw;
 }
