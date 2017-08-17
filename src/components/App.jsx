@@ -9,11 +9,11 @@ class App extends Component {
       'recipes': [
         {
           'title': 'Stir-fried green beans',
-          'ingredients': 'green beans, ground meat, oyster sauce, soy sauce, water'
+          'ingredients': ['green beans', 'ground meat', 'oyster sauce', 'soy sauce', 'water']
         },
         {
           'title': 'Fried egg and onion',
-          'ingredients': 'eggs, yellow onion, soy sauce'
+          'ingredients': ['eggs', 'yellow onion', 'soy sauce']
         }
       ]
     };
