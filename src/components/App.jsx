@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Sidebar from './Sidebar';
-import RecipeDetails from './RecipeDetails';
-
+import MainSection from './MainSection';
 
 class App extends Component {
   constructor(props) {
@@ -23,7 +22,7 @@ class App extends Component {
     return (
       <div className="App">
         <Sidebar recipes={this.state.recipes}/>
-        {/* <RecipeDetails /> */}
+        <MainSection id="main" />
       </div>
     );
   }
