@@ -21,8 +21,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Sidebar recipes={this.state.recipes}/>
-        <MainSection id="main" />
+        <Sidebar
+          handleRecipeClick={this.handleRecipeClick}
+          recipes={this.state.recipes}
+        />
+        <MainSection id="main" content={this.state.currentRecipe}/>
       </div>
     );
   }
