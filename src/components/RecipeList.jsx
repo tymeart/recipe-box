@@ -6,7 +6,6 @@ const RecipeList = (props) => {
     return (
       <RecipeListItem
         key={index}
-        data-id={index}
         handleRecipeClick={props.handleRecipeClick}
         recipe={recipe}
       />

@@ -2,7 +2,7 @@ import React from 'react';
 
 const RecipeListItem = (props) => {
   return (
-    <li>{props.recipe.title}</li>
+    <li onClick={props.handleRecipeClick}>{props.recipe.title}</li>
   );
 }
 
