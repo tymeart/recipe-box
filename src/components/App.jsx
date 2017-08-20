@@ -8,12 +8,16 @@ class App extends Component {
     this.state = {
       recipes: [
         {
-          'title': 'Stir-fried green beans',
-          'ingredients': ['green beans', 'ground meat', 'oyster sauce', 'soy sauce', 'water']
+          title: 'Stir-fried green beans',
+          ingredients: ['green beans', 'ground meat', 'oyster sauce', 'soy sauce', 'water'],
+          instructions: 'Marinate meat with oyster sauce, cut beans, cook meat until medium-rare,
+            add beans with little bit of oyster sauce and soy sauce and water.'
         },
         {
-          'title': 'Fried egg and onion',
-          'ingredients': ['eggs', 'yellow onion', 'soy sauce']
+          title: 'Fried egg and onion',
+          ingredients: ['eggs', 'yellow onion', 'soy sauce'],
+          instructions: 'Beat eggs and add soy sauce to it, chop onion,
+            cook the onion on low heat until golden brownish, add egg on top.'
         }
       ],
       display: null
@@ -45,9 +49,11 @@ class App extends Component {
         />
         {this.state.display !== null &&
           <MainSection id="main"
-          recipeTitle={this.state.display.title}
-          recipeIngredients={this.state.display.ingredients}
-        />}
+            recipeTitle={this.state.display.title}
+            recipeIngredients={this.state.display.ingredients}
+            recipeInstructions={this.state.display.instructions}
+          />
+        }
       </div>
     );
   }

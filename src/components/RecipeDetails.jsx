@@ -10,6 +10,10 @@ const RecipeDetails = (recipe) => {
       <ul>
         {recipe.ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
       </ul>
+      <h3>Instructions</h3>
+      <ol>
+        {/* {recipe.instructions.map(step => <li key={}>{step}</li>)} */}
+      </ol>
     </div>
   );
 }
