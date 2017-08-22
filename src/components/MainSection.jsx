@@ -6,9 +6,10 @@ class MainSection extends Component {
     return (
       <main>
         <RecipeDetails
-          title={this.props.recipeTitle}
-          ingredients={this.props.recipeIngredients}
-          instructions={this.props.recipeInstructions}
+          recipe={this.props.recipe}
+          // title={this.props.recipeTitle}
+          // ingredients={this.props.recipeIngredients}
+          // instructions={this.props.recipeInstructions}
         />
       </main>
     );

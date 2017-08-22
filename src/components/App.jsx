@@ -10,17 +10,17 @@ class App extends Component {
         {
           title: 'Stir-fried green beans',
           ingredients: ['green beans', 'ground meat', 'oyster sauce', 'soy sauce', 'water'],
-          instructions: 'Marinate meat with oyster sauce, cut beans, cook meat until medium-rare,
-            add beans with little bit of oyster sauce and soy sauce and water.'
+          instructions: 'Marinate meat with oyster sauce, cut beans, cook meat until medium-rare, add beans with little bit of oyster sauce and soy sauce and water.'
         },
         {
           title: 'Fried egg and onion',
           ingredients: ['eggs', 'yellow onion', 'soy sauce'],
-          instructions: 'Beat eggs and add soy sauce to it, chop onion,
-            cook the onion on low heat until golden brownish, add egg on top.'
+          instructions: 'Beat eggs and add soy sauce to it, chop onion, cook the onion on low heat until golden brownish, add egg on top.'
         }
       ],
-      display: null
+      displayRecipe: false,
+      displayAllRecipes: false,
+      displayForm: false,
     };
   }
 
@@ -29,12 +29,14 @@ class App extends Component {
     let selectedRecipe = this.state.recipes.filter(recipe => {
       return recipeTitle === recipe.title;
     });
-    this.setState({display: selectedRecipe[0]});
+    this.setState({displayRecipe: true});
   }
 
   // if button is clicked, display form
-  handleAddRecipeButtonClick = (event) => {
-
+  handleAddRecipeButtonClick = () => {
+    this.setState({
+      displayRecipe: false,
+      displayForm: true});
   }
 
   // default and if recipe box heading is clicked, display instructions
@@ -47,11 +49,12 @@ class App extends Component {
           handleRecipeClick={this.handleRecipeClick}
           recipes={this.state.recipes}
         />
-        {this.state.display !== null &&
+        {this.state.displayRecipe &&
           <MainSection id="main"
-            recipeTitle={this.state.display.title}
-            recipeIngredients={this.state.display.ingredients}
-            recipeInstructions={this.state.display.instructions}
+            recipe={this.state.recipes[0]}
+            // recipeTitle={this.state.recipe[0].title}
+            // recipeIngredients={this.state.recipe[0].ingredients}
+            // recipeInstructions={this.state.recipe[0].instructions}
           />
         }
       </div>
