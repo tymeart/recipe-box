@@ -18,9 +18,8 @@ class App extends Component {
           instructions: 'Beat eggs and add soy sauce to it, chop onion, cook the onion on low heat until golden brownish, add egg on top.'
         }
       ],
-      displayRecipe: false,
-      displayAllRecipes: false,
-      displayForm: false,
+      displayRecipe: null,
+      displayForm: false
     };
   }
 
@@ -29,34 +28,32 @@ class App extends Component {
     let selectedRecipe = this.state.recipes.filter(recipe => {
       return recipeTitle === recipe.title;
     });
-    this.setState({displayRecipe: true});
-  }
-
-  // if button is clicked, display form
-  handleAddRecipeButtonClick = () => {
     this.setState({
-      displayRecipe: false,
-      displayForm: true});
+      displayRecipe: selectedRecipe[0],
+      displayForm: false
+    });
   }
 
-  // default and if recipe box heading is clicked, display instructions
-
+  handleAddRecipeButtonClick = (event) => {
+    event.preventDefault();
+    this.setState({
+      displayRecipe: null,
+      displayForm: true
+    });
+  }
 
   render() {
     return (
       <div className="App">
         <Sidebar
           handleRecipeClick={this.handleRecipeClick}
+          handleAddRecipeButtonClick={this.handleAddRecipeButtonClick}
           recipes={this.state.recipes}
         />
-        {this.state.displayRecipe &&
-          <MainSection id="main"
-            recipe={this.state.recipes[0]}
-            // recipeTitle={this.state.recipe[0].title}
-            // recipeIngredients={this.state.recipe[0].ingredients}
-            // recipeInstructions={this.state.recipe[0].instructions}
-          />
-        }
+        <MainSection id="main"
+          recipe={this.state.displayRecipe}
+          displayForm={this.state.displayForm}
+        />
       </div>
     );
   }
