@@ -7,15 +7,15 @@ class RecipeForm extends Component {
         <h2>Add a New Recipe</h2>
         <form>
           <label htmlFor="title">Recipe Title</label>
-          <input id="title" type="text" />
+          <input id="title" type="text" value={this.props.titleValue} onChange={this.props.handleTitle} />
 
           <label htmlFor="ingredients">Ingredients</label>
-          <textarea id="ingredients" />
+          <textarea id="ingredients" value={this.props.ingredientsValue} onChange={this.props.handleIngredients} />
 
           <label htmlFor="instructions">Instructions</label>
-          <textarea id="instructions" />
+          <textarea id="instructions" value={this.props.instructionsValue} onChange={this.props.handleInstructions} />
 
-          <button>Save</button>
+          <button onClick={this.props.handleSubmit}>Save</button>
         </form>
       </div>
     );

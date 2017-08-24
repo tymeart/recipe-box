@@ -19,7 +19,10 @@ class App extends Component {
         }
       ],
       displayRecipe: null,
-      displayForm: false
+      displayForm: false,
+      title: '',
+      ingredients: '',
+      instructions: ''
     };
   }
 
@@ -42,6 +45,25 @@ class App extends Component {
     });
   }
 
+  handleTitle = (event) => {
+    this.setState({title: event.target.value});
+  }
+
+  handleIngredients = (event) => {
+    this.setState({ingredients: event.target.value});
+  }
+
+  handleInstructions = (event) => {
+    this.setState({instructions: event.target.value});
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(this.state.title);
+    console.log(this.state.ingredients);
+    console.log(this.state.instructions);
+  }
+
   render() {
     return (
       <div className="App">
@@ -53,6 +75,13 @@ class App extends Component {
         <MainSection id="main"
           recipe={this.state.displayRecipe}
           displayForm={this.state.displayForm}
+          titleValue={this.state.title}
+          ingredientsValue={this.state.ingredients}
+          instructionsValue={this.state.instructions}
+          handleTitle={this.handleTitle}
+          handleIngredients={this.handleIngredients}
+          handleInstructions={this.handleInstructions}
+          handleSubmit={this.handleSubmit}
         />
       </div>
     );

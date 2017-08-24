@@ -7,7 +7,17 @@ class MainSection extends Component {
     return (
       <main>
         {this.props.recipe && <RecipeDetails recipe={this.props.recipe} />}
-        {this.props.displayForm && <RecipeForm />}
+        {this.props.displayForm &&
+          <RecipeForm
+            titleValue={this.props.titleValue}
+            ingredientsValue={this.props.ingredientsValue}
+            instructionsValue={this.props.instructionsValue}
+            handleTitle={this.props.handleTitle}
+            handleIngredients={this.props.handleIngredients}
+            handleInstructions={this.props.handleInstructions}
+            handleSubmit={this.props.handleSubmit}
+          />
+        }
       </main>
     );
   }
