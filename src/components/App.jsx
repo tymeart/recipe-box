@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import MainSection from './MainSection';
+import storageAvailable from '../storageAvailable';
+
+let initialRecipes = [
+  {
+    title: 'Stir-fried green beans',
+    ingredients: ['green beans', 'ground meat', 'oyster sauce', 'soy sauce', 'water'],
+    instructions: ['Marinate meat with oyster sauce', 'Cut beans', 'Cook meat until medium-rare', 'Add beans with little bit of oyster sauce and soy sauce and water']
+  },
+  {
+    title: 'Fried egg and onion',
+    ingredients: ['eggs', 'yellow onion', 'soy sauce'],
+    instructions: 'Beat eggs and add soy sauce to it, chop onion, cook the onion on low heat until golden brownish, add egg on top.'
+  }
+];
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipes: [
-        {
-          title: 'Stir-fried green beans',
-          ingredients: ['green beans', 'ground meat', 'oyster sauce', 'soy sauce', 'water'],
-          instructions: 'Marinate meat with oyster sauce, cut beans, cook meat until medium-rare, add beans with little bit of oyster sauce and soy sauce and water.'
-        },
-        {
-          title: 'Fried egg and onion',
-          ingredients: ['eggs', 'yellow onion', 'soy sauce'],
-          instructions: 'Beat eggs and add soy sauce to it, chop onion, cook the onion on low heat until golden brownish, add egg on top.'
-        }
-      ],
+      recipes: [],
       displayRecipe: null,
       displayForm: false,
       title: '',
@@ -59,9 +62,26 @@ class App extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.title);
-    console.log(this.state.ingredients);
-    console.log(this.state.instructions);
+    // make sure all fields are filled
+    // sanitize
+    // save recipe into localStorage
+  }
+
+  componentWillMount() {
+    if (storageAvailable('localStorage')) {
+      if (!localStorage.getItem('initialRecipes')) {
+        for (let i = 0; i < initialRecipes.length; i++) {
+          let recipeTitle = `_tymeart_recipes_${initialRecipes[i].title}`;
+          let recipeDetails = {
+            ingredients: initialRecipes[i].ingredients,
+            instructions: initialRecipes[i].instructions
+          };
+          localStorage.setItem(recipeTitle, recipeDetails);
+        }
+      }
+    } else {
+      alert('This app requires your browser\'s localStorage to be enabled in order to save recipes.');
+    }
   }
 
   render() {
