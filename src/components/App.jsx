@@ -62,14 +62,31 @@ class App extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    let newRecipeTitle = `_tymeart_recipes_${this.state.title}`;
+    let newRecipeDetails = {
+      ingredients: this.state.ingredients,
+      instructions: this.state.instructions
+    };
     // make sure all fields are filled
-    // sanitize
-    // save recipe into localStorage
+    // make sure title is unique
+    if (localStorage.getItem(newRecipeTitle)) {
+      alert('You already have a recipe with that title.');
+    } else {
+      // sanitize
+      // save recipe into localStorage
+      localStorage.setItem(newRecipeTitle, newRecipeDetails);
+      // update this.state.recipes with new recipe
+    }
+
   }
 
   componentWillMount() {
     if (storageAvailable('localStorage')) {
-      if (!localStorage.getItem('initialRecipes')) {
+      if (!localStorage.getItem('initialLoad')) {
+        // load the initial recipes if they're not already there
+        // or if there are no recipes??
+        localStorage.setItem('initialLoad', 'true');
+
         for (let i = 0; i < initialRecipes.length; i++) {
           let recipeTitle = `_tymeart_recipes_${initialRecipes[i].title}`;
           let recipeDetails = {
@@ -78,6 +95,10 @@ class App extends Component {
           };
           localStorage.setItem(recipeTitle, recipeDetails);
         }
+      } else {
+        // load the saved recipes?
+          // make an array of all the recipes within storage
+          // use this.setState to set recipes to that array
       }
     } else {
       alert('This app requires your browser\'s localStorage to be enabled in order to save recipes.');
