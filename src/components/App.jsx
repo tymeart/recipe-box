@@ -83,8 +83,7 @@ class App extends Component {
   componentWillMount() {
     if (storageAvailable('localStorage')) {
       if (!localStorage.getItem('initialLoad')) {
-        // load the initial recipes if they're not already there
-        // or if there are no recipes??
+        // first visit
         localStorage.setItem('initialLoad', 'true');
 
         for (let i = 0; i < initialRecipes.length; i++) {
@@ -95,9 +94,20 @@ class App extends Component {
           };
           localStorage.setItem(recipeTitle, recipeDetails);
         }
+        // updateRecipes
       } else {
-        // load the saved recipes?
+        // subsequent visits
+          localStorage.removeItem('initialLoad');
           // make an array of all the recipes within storage
+          let titles = [];
+          let recipeArr = [];
+          for (let j = 0; j < localStorage.length; j++) {
+            titles[j] = localStorage.key(j);
+          }
+          for (let k = 0; k < titles.length; k++) {
+            // parse localStorage value since it's been serialized?
+            recipeArr.push({localStorage.key(k): localStorage[titles[k]]});
+          }
           // use this.setState to set recipes to that array
       }
     } else {
