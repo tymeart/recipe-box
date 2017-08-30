@@ -7,7 +7,7 @@ let initialRecipes = [
   {
     title: 'Stir-fried green beans',
     ingredients: ['green beans', 'ground meat', 'oyster sauce', 'soy sauce', 'water'],
-    instructions: ['Marinate meat with oyster sauce', 'Cut beans', 'Cook meat until medium-rare', 'Add beans with little bit of oyster sauce and soy sauce and water']
+    instructions: 'Marinate meat with oyster sauce, cut beans, cook meat until medium-rare, add beans with little bit of oyster sauce and soy sauce and water'
   },
   {
     title: 'Fried egg and onion',
