@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import RecipeList from './RecipeList';
 
 class Sidebar extends Component {
-
   render() {
     return (
       <div className="Sidebar">

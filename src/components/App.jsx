@@ -32,7 +32,7 @@ class App extends Component {
   handleRecipeClick = (event) => {
     let recipeTitle = event.target.innerHTML;
     let selectedRecipe = this.state.recipes.filter(recipe => {
-      return recipeTitle === recipe.title;
+      return recipeTitle === recipe[0];
     });
     this.setState({
       displayRecipe: selectedRecipe[0],
@@ -77,7 +77,6 @@ class App extends Component {
       localStorage.setItem(newRecipeTitle, newRecipeDetails);
       // update this.state.recipes with new recipe
     }
-
   }
 
   componentWillMount() {
@@ -92,23 +91,31 @@ class App extends Component {
             ingredients: initialRecipes[i].ingredients,
             instructions: initialRecipes[i].instructions
           };
-          localStorage.setItem(recipeTitle, recipeDetails);
+          localStorage.setItem(recipeTitle, JSON.stringify(recipeDetails));
         }
-        // updateRecipes
+
+        let titles = [];
+        let recipeArr = [];
+        for (let j = 0; j < localStorage.length; j++) {
+          titles[j] = localStorage.key(j).slice(17);
+        }
+        for (let k = 0; k < titles.length; k++) {
+          recipeArr.push([titles[k], JSON.parse(localStorage.getItem(titles[k]))]);
+        }
+        this.setState({recipes: recipeArr});
       } else {
         // subsequent visits
-          localStorage.removeItem('initialLoad');
-          // make an array of all the recipes within storage
-          let titles = [];
-          let recipeArr = [];
-          for (let j = 0; j < localStorage.length; j++) {
-            titles[j] = localStorage.key(j);
-          }
-          for (let k = 0; k < titles.length; k++) {
-            // parse localStorage value since it's been serialized?
-            recipeArr.push({localStorage.key(k): localStorage[titles[k]]});
-          }
-          // use this.setState to set recipes to that array
+        // localStorage.removeItem('initialLoad');
+        // make an array of all the recipes within storage
+        let titles = [];
+        let recipeArr = [];
+        for (let j = 0; j < localStorage.length; j++) {
+          titles[j] = localStorage.key(j).slice(17);
+        }
+        for (let k = 0; k < titles.length; k++) {
+          recipeArr.push([titles[k], JSON.parse(localStorage.getItem(`_tymeart_recipes_${titles[k]}`))]);
+        }
+        this.setState({recipes: recipeArr});
       }
     } else {
       alert('This app requires your browser\'s localStorage to be enabled in order to save recipes.');
