@@ -111,3 +111,8 @@ form button {
 .ingredients, .instructions {
   margin-bottom: 40px;
 }
+
+pre {
+  font-family: 'Merriweather', serif;
+  white-space: pre-wrap;
+}

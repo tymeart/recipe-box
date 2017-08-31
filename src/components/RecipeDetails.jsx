@@ -20,9 +20,7 @@ const RecipeDetails = (props) => {
 
       <div className="instructions">
         <h3>Instructions</h3>
-        <ol>
-          {props.recipe[1].instructions}
-        </ol>
+        <pre>{props.recipe[1].instructions}</pre>
       </div>
     </div>
   );

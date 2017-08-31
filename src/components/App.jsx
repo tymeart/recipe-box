@@ -7,12 +7,12 @@ let initialRecipes = [
   {
     title: 'Stir-fried green beans',
     ingredients: ['green beans', 'ground meat', 'oyster sauce', 'soy sauce', 'water'],
-    instructions: 'Marinate meat with oyster sauce, cut beans, cook meat until medium-rare, add beans with little bit of oyster sauce and soy sauce and water'
+    instructions: '1. Marinate meat with oyster sauce.\n2. Cut beans.\n3. Cook meat until medium-rare.\n4. Add beans with little bit of oyster sauce, soy sauce, and water.'
   },
   {
     title: 'Fried egg and onion',
     ingredients: ['eggs', 'yellow onion', 'soy sauce'],
-    instructions: 'Beat eggs and add soy sauce to it, chop onion, cook the onion on low heat until golden brownish, add egg on top.'
+    instructions: '1. Beat eggs and add soy sauce to it.\n2. Chop onion.\n3. Cook the onion on low heat until golden brown.\n4. Add egg mixture on top.'
   }
 ];
 
