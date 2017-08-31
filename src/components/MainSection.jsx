@@ -12,9 +12,9 @@ class MainSection extends Component {
             titleValue={this.props.titleValue}
             ingredientsValue={this.props.ingredientsValue}
             instructionsValue={this.props.instructionsValue}
-            handleTitle={this.props.handleTitle}
-            handleIngredients={this.props.handleIngredients}
-            handleInstructions={this.props.handleInstructions}
+            handleTitleChange={this.props.handleTitleChange}
+            handleIngredientsChange={this.props.handleIngredientsChange}
+            handleInstructionsChange={this.props.handleInstructionsChange}
             handleSubmit={this.props.handleSubmit}
           />
         }

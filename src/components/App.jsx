@@ -48,15 +48,15 @@ class App extends Component {
     });
   }
 
-  handleTitle = (event) => {
+  handleTitleChange = (event) => {
     this.setState({title: event.target.value});
   }
 
-  handleIngredients = (event) => {
+  handleIngredientsChange = (event) => {
     this.setState({ingredients: event.target.value});
   }
 
-  handleInstructions = (event) => {
+  handleInstructionsChange = (event) => {
     this.setState({instructions: event.target.value});
   }
 
@@ -136,9 +136,9 @@ class App extends Component {
           titleValue={this.state.title}
           ingredientsValue={this.state.ingredients}
           instructionsValue={this.state.instructions}
-          handleTitle={this.handleTitle}
-          handleIngredients={this.handleIngredients}
-          handleInstructions={this.handleInstructions}
+          handleTitleChange={this.handleTitleChange}
+          handleIngredientsChange={this.handleIngredientsChange}
+          handleInstructionsChange={this.handleInstructionsChange}
           handleSubmit={this.handleSubmit}
         />
       </div>
