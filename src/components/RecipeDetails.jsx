@@ -1,10 +1,13 @@
 import React from 'react';
 
 const RecipeDetails = (props) => {
+  const currentRecipeTitle = props.recipe[0];
+  const currentRecipeDetails = JSON.parse(props.recipe[1]);
+
   return (
     <div className="RecipeDetails">
       <div className="recipe-heading">
-        <h2>{props.recipe[0]}</h2>
+        <h2>{currentRecipeTitle}</h2>
         <div>
           <button>Edit</button>
           <button>Delete</button>
@@ -14,13 +17,13 @@ const RecipeDetails = (props) => {
       <div className="ingredients">
         <h3>Ingredients</h3>
         <ul>
-          {props.recipe[1].ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
+          {currentRecipeDetails.ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
         </ul>
       </div>
 
       <div className="instructions">
         <h3>Instructions</h3>
-        <pre>{props.recipe[1].instructions}</pre>
+        <pre>{currentRecipeDetails.instructions}</pre>
       </div>
     </div>
   );
