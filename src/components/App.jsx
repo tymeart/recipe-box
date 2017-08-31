@@ -109,7 +109,7 @@ class App extends Component {
         this.updateRecipeState();
       }
     } else {
-      alert('This app requires your browser\'s localStorage to be enabled in order to save recipes.');
+      alert('Your browser\'s localStorage must be enabled in order to save recipes.');
     }
   }
 
