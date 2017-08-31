@@ -79,12 +79,22 @@ class App extends Component {
     }
   }
 
+  updateRecipeState = () => {
+    let titles = [];
+    let recipeArr = [];
+    for (let j = 0; j < localStorage.length; j++) {
+      titles[j] = localStorage.key(j).slice(17);
+    }
+    for (let k = 0; k < titles.length; k++) {
+      recipeArr.push([titles[k], JSON.parse(localStorage.getItem(`_tymeart_recipes_${titles[k]}`))]);
+    }
+    this.setState({recipes: recipeArr});
+  }
+
   componentWillMount() {
     if (storageAvailable('localStorage')) {
-      if (!localStorage.getItem('initialLoad')) {
+      if (localStorage.length === 0) {
         // first visit
-        localStorage.setItem('initialLoad', 'true');
-
         for (let i = 0; i < initialRecipes.length; i++) {
           let recipeTitle = `_tymeart_recipes_${initialRecipes[i].title}`;
           let recipeDetails = {
@@ -93,29 +103,10 @@ class App extends Component {
           };
           localStorage.setItem(recipeTitle, JSON.stringify(recipeDetails));
         }
-
-        let titles = [];
-        let recipeArr = [];
-        for (let j = 0; j < localStorage.length; j++) {
-          titles[j] = localStorage.key(j).slice(17);
-        }
-        for (let k = 0; k < titles.length; k++) {
-          recipeArr.push([titles[k], JSON.parse(localStorage.getItem(titles[k]))]);
-        }
-        this.setState({recipes: recipeArr});
+        this.updateRecipeState();
       } else {
         // subsequent visits
-        // localStorage.removeItem('initialLoad');
-        // make an array of all the recipes within storage
-        let titles = [];
-        let recipeArr = [];
-        for (let j = 0; j < localStorage.length; j++) {
-          titles[j] = localStorage.key(j).slice(17);
-        }
-        for (let k = 0; k < titles.length; k++) {
-          recipeArr.push([titles[k], JSON.parse(localStorage.getItem(`_tymeart_recipes_${titles[k]}`))]);
-        }
-        this.setState({recipes: recipeArr});
+        this.updateRecipeState();
       }
     } else {
       alert('This app requires your browser\'s localStorage to be enabled in order to save recipes.');
