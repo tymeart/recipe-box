@@ -6,7 +6,7 @@ class MainSection extends Component {
   render() {
     return (
       <main>
-        {this.props.recipe && <RecipeDetails recipe={this.props.recipe} />}
+        {this.props.recipe && <RecipeDetails recipe={this.props.recipe} handleDelete={this.props.handleDelete}/>}
         {this.props.displayForm &&
           <RecipeForm
             titleValue={this.props.titleValue}

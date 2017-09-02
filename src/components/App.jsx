@@ -76,6 +76,14 @@ class App extends Component {
     }
   }
 
+  handleDelete = (recipeTitle, event) => {
+    event.preventDefault();
+    localStorage.removeItem(`_tymeart_recipes_${recipeTitle}`);
+    this.updateRecipeState();
+    // "refresh" MainSection so it doesn't continue showing recipe you just deleted
+    // maybe add a message "[recipe title] has been deleted"
+  }
+
   updateRecipeState = () => {
     let titles = [];
     let recipeArr = [];
@@ -121,6 +129,7 @@ class App extends Component {
         <MainSection id="main"
           recipe={this.state.displayRecipe}
           displayForm={this.state.displayForm}
+          handleDelete={this.handleDelete}
           titleValue={this.state.title}
           ingredientsValue={this.state.ingredients}
           instructionsValue={this.state.instructions}
