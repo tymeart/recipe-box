@@ -80,7 +80,6 @@ class App extends Component {
     event.preventDefault();
     localStorage.removeItem(`_tymeart_recipes_${recipeTitle}`);
     this.updateRecipeState();
-    // "refresh" MainSection so it doesn't continue showing recipe you just deleted
     // maybe add a message "[recipe title] has been deleted"
   }
 
@@ -93,7 +92,11 @@ class App extends Component {
     for (let k = 0; k < titles.length; k++) {
       recipeArr.push([titles[k], localStorage.getItem(`_tymeart_recipes_${titles[k]}`)]);
     }
-    this.setState({recipes: recipeArr});
+    this.setState({
+      recipes: recipeArr,
+      displayRecipe: null,
+      displayAddRecipeForm: false
+    });
   }
 
   componentWillMount() {
