@@ -22,7 +22,8 @@ class App extends Component {
     this.state = {
       recipes: [],
       displayRecipe: null,
-      displayForm: false,
+      displayAddRecipeForm: false,
+      displayEditForm: false,
       title: '',
       ingredients: '',
       instructions: ''
@@ -36,7 +37,7 @@ class App extends Component {
     });
     this.setState({
       displayRecipe: selectedRecipe[0],
-      displayForm: false
+      displayAddRecipeForm: false
     });
   }
 
@@ -44,7 +45,20 @@ class App extends Component {
     event.preventDefault();
     this.setState({
       displayRecipe: null,
-      displayForm: true
+      displayAddRecipeForm: true
+    });
+  }
+
+  handleEditButtonClick = (recipe, event) => {
+    event.preventDefault();
+    const currentRecipeTitle = recipe[0];
+    const currentRecipeDetails = JSON.parse(recipe[1]);
+    this.setState({
+      displayRecipe: null,
+      displayEditForm: true,
+      title: currentRecipeTitle,
+      ingredients: currentRecipeDetails.ingredients,
+      instructions: currentRecipeDetails.instructions
     });
   }
 
@@ -131,7 +145,9 @@ class App extends Component {
         />
         <MainSection id="main"
           recipe={this.state.displayRecipe}
-          displayForm={this.state.displayForm}
+          displayAddRecipeForm={this.state.displayAddRecipeForm}
+          displayEditForm={this.state.displayEditForm}
+          handleEditButtonClick={this.handleEditButtonClick}
           handleDelete={this.handleDelete}
           titleValue={this.state.title}
           ingredientsValue={this.state.ingredients}
