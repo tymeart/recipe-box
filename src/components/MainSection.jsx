@@ -23,12 +23,14 @@ class MainSection extends Component {
             handleTitleChange={this.props.handleTitleChange}
             handleIngredientsChange={this.props.handleIngredientsChange}
             handleInstructionsChange={this.props.handleInstructionsChange}
-            handleSubmit={this.props.handleSubmit}
+            handleNewRecipeSubmit={this.props.handleNewRecipeSubmit}
           />
         }
 
         {this.props.displayEditForm &&
-          <EditRecipeForm />
+          <EditRecipeForm
+            handleEditSubmit={this.props.handleEditSubmit}
+          />
         }
       </main>
     );

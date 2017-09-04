@@ -74,7 +74,7 @@ class App extends Component {
     this.setState({instructions: event.target.value});
   }
 
-  handleSubmit = (event) => {
+  handleNewRecipeSubmit = (event) => {
     event.preventDefault();
     let newRecipeTitle = `_tymeart_recipes_${this.state.title}`;
     let newRecipeIngredients = this.state.ingredients.split(', ');
@@ -87,6 +87,29 @@ class App extends Component {
     } else if (this.state.title !== '' && this.state.ingredients !== '') {
       localStorage.setItem(newRecipeTitle, JSON.stringify(newRecipeDetails));
       this.updateRecipeState();
+    }
+  }
+
+  handleEditSubmit = (recipe, event) => {
+    event.preventDefault();
+    let newRecipeTitle = `_tymeart_recipes_${this.state.title}`;
+    let newRecipeIngredients = this.state.ingredients.split(', ');
+    let newRecipeDetails = {
+      ingredients: newRecipeIngredients,
+      instructions: this.state.instructions
+    };
+    let oldRecipeTitle = recipe[0];
+
+    // if the title is the same
+    if (localStorage.getItem(newRecipeTitle)) {
+      // only change the value
+      localStorage.setItem(newRecipeTitle, newRecipeDetails);
+    } else if (this.state.title !== oldRecipeTitle) {
+      // if the title has changed
+        // create new key & value
+        localStorage.setItem(newRecipeTitle, newRecipeDetails);
+        // delete old item
+        localStorage.removeItem(`_tymeart_recipes_${oldRecipeTitle}`);
     }
   }
 
@@ -148,6 +171,7 @@ class App extends Component {
           displayAddRecipeForm={this.state.displayAddRecipeForm}
           displayEditForm={this.state.displayEditForm}
           handleEditButtonClick={this.handleEditButtonClick}
+          handleEditSubmit={this.handleEditSubmit}
           handleDelete={this.handleDelete}
           titleValue={this.state.title}
           ingredientsValue={this.state.ingredients}
@@ -155,7 +179,7 @@ class App extends Component {
           handleTitleChange={this.handleTitleChange}
           handleIngredientsChange={this.handleIngredientsChange}
           handleInstructionsChange={this.handleInstructionsChange}
-          handleSubmit={this.handleSubmit}
+          handleNewRecipeSubmit={this.handleNewRecipeSubmit}
         />
       </div>
     );
