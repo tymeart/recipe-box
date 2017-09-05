@@ -37,7 +37,8 @@ class App extends Component {
     });
     this.setState({
       displayRecipe: selectedRecipe[0],
-      displayAddRecipeForm: false
+      displayAddRecipeForm: false,
+      displayEditForm: false
     });
   }
 
