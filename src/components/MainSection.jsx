@@ -29,6 +29,9 @@ class MainSection extends Component {
 
         {this.props.displayEditForm &&
           <EditRecipeForm
+            titleValue={this.props.titleValue}
+            ingredientsValue={this.props.ingredientsValue}
+            instructionsValue={this.props.instructionsValue}
             handleEditSubmit={this.props.handleEditSubmit}
           />
         }
