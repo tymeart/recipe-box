@@ -58,7 +58,7 @@ class App extends Component {
       displayRecipe: null,
       displayEditForm: true,
       title: currentRecipeTitle,
-      ingredients: currentRecipeDetails.ingredients,
+      ingredients: currentRecipeDetails.ingredients.join(', '),
       instructions: currentRecipeDetails.instructions
     });
   }
