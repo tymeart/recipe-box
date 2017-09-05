@@ -133,7 +133,8 @@ class App extends Component {
     this.setState({
       recipes: recipeArr,
       displayRecipe: null,
-      displayAddRecipeForm: false
+      displayAddRecipeForm: false,
+      displayEditForm: false
     });
   }
 
