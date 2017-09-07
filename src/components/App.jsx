@@ -63,17 +63,8 @@ class App extends Component {
     });
   }
 
-  handleTitleChange = (event) => {
-    this.setState({title: event.target.value});
-  }
 
-  handleIngredientsChange = (event) => {
-    this.setState({ingredients: event.target.value});
-  }
 
-  handleInstructionsChange = (event) => {
-    this.setState({instructions: event.target.value});
-  }
 
   handleNewRecipeSubmit = (event) => {
     event.preventDefault();
