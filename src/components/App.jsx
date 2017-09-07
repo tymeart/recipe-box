@@ -63,17 +63,15 @@ class App extends Component {
     });
   }
 
-
-
-
-  handleNewRecipeSubmit = (event) => {
+  handleNewRecipeSubmit = (formData, event) => {
     event.preventDefault();
-    let newRecipeTitle = `_tymeart_recipes_${this.state.title}`;
-    let newRecipeIngredients = this.state.ingredients.split(', ');
+    let newRecipeTitle = `_tymeart_recipes_${formData.title}`;
+    let newRecipeIngredients = formData.ingredients.split(', ');
     let newRecipeDetails = {
       ingredients: newRecipeIngredients,
-      instructions: this.state.instructions
+      instructions: formData.instructions
     };
+
     if (localStorage.getItem(newRecipeTitle)) {
       alert('You already have a recipe with that title.');
     } else if (this.state.title !== '' && this.state.ingredients !== '') {
@@ -82,26 +80,21 @@ class App extends Component {
     }
   }
 
-  handleEditSubmit = (recipe, event) => {
+  handleEditSubmit = (formData, event) => {
     event.preventDefault();
-    let newRecipeTitle = `_tymeart_recipes_${this.state.title}`;
-    let newRecipeIngredients = this.state.ingredients.split(', ');
+
+    const oldRecipeTitle = `_tymeart_recipes_${this.state.title}`;
+    localStorage.removeItem(oldRecipeTitle);
+
+    let newRecipeTitle = `_tymeart_recipes_${formData.title}`;
+    let newRecipeIngredients = formData.ingredients.split(', ');
     let newRecipeDetails = {
       ingredients: newRecipeIngredients,
-      instructions: this.state.instructions
+      instructions: formData.instructions
     };
-    let oldRecipeTitle = recipe[0];
-
-    // if the title is the same
-    if (localStorage.getItem(newRecipeTitle)) {
-      // only change the value
-      localStorage.setItem(newRecipeTitle, newRecipeDetails);
-    } else if (this.state.title !== oldRecipeTitle) {
-      // if the title has changed
-        // create new key & value
-        localStorage.setItem(newRecipeTitle, newRecipeDetails);
-        // delete old item
-        localStorage.removeItem(`_tymeart_recipes_${oldRecipeTitle}`);
+    if (formData.title !== '' && formData.ingredients !== '') {
+      localStorage.setItem(newRecipeTitle, JSON.stringify(newRecipeDetails));
+      this.updateRecipeState();
     }
   }
 
