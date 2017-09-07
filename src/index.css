@@ -96,7 +96,8 @@ form button {
   width: 100px;
 }
 
-.RecipeDetails button {
+.RecipeDetails button,
+.submitOptions button {
   font-size: 1rem;
   height: 30px;
   margin: 0 3px;
