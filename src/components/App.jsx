@@ -164,13 +164,10 @@ class App extends Component {
           handleEditButtonClick={this.handleEditButtonClick}
           handleEditSubmit={this.handleEditSubmit}
           handleDelete={this.handleDelete}
+          handleNewRecipeSubmit={this.handleNewRecipeSubmit}
           titleValue={this.state.title}
           ingredientsValue={this.state.ingredients}
           instructionsValue={this.state.instructions}
-          handleTitleChange={this.handleTitleChange}
-          handleIngredientsChange={this.handleIngredientsChange}
-          handleInstructionsChange={this.handleInstructionsChange}
-          handleNewRecipeSubmit={this.handleNewRecipeSubmit}
         />
       </div>
     );
