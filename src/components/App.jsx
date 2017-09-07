@@ -75,10 +75,12 @@ class App extends Component {
 
     if (localStorage.getItem(newRecipeTitle)) {
       alert('You already have a recipe with that title.');
-    } else if (this.state.title !== '' && this.state.ingredients !== '') {
+    } else if (formData.title !== '' && formData.ingredients !== '') {
       localStorage.setItem(newRecipeTitle, JSON.stringify(newRecipeDetails));
       this.updateRecipeState();
     }
+
+    // add message about recipe being saved
   }
 
   handleEditSubmit = (formData, event) => {
@@ -97,6 +99,8 @@ class App extends Component {
       localStorage.setItem(newRecipeTitle, JSON.stringify(newRecipeDetails));
       this.updateRecipeState();
     }
+
+    // add message about recipe being saved
   }
 
   handleDelete = (recipeTitle, event) => {
