@@ -18,6 +18,7 @@ class MainSection extends Component {
         {this.props.displayAddRecipeForm &&
           <AddRecipeForm
             handleNewRecipeSubmit={this.props.handleNewRecipeSubmit}
+            handleCancel={this.props.handleCancel}
           />
         }
 
@@ -27,6 +28,7 @@ class MainSection extends Component {
             ingredientsValue={this.props.ingredientsValue}
             instructionsValue={this.props.instructionsValue}
             handleEditSubmit={this.props.handleEditSubmit}
+            handleCancel={this.props.handleCancel}
           />
         }
       </main>

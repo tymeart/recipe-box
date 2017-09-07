@@ -43,6 +43,7 @@ class EditRecipeForm extends Component {
           <textarea id="instructions" value={this.state.currentInstructions} onChange={this.handleInstructionsChange} />
 
           <button onClick={this.props.handleEditSubmit.bind(this, formData)}>Save</button>
+          <button onClick={this.props.handleCancel}>Cancel</button>
         </form>
       </div>
     );

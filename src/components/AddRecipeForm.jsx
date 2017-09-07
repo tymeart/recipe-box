@@ -44,6 +44,7 @@ class AddRecipeForm extends Component {
           <textarea id="instructions" value={this.state.instructions} onChange={this.handleInstructionsChange} />
 
           <button onClick={this.props.handleNewRecipeSubmit.bind(this, formData)}>Save</button>
+          <button onClick={this.props.handleCancel}>Cancel</button>
         </form>
       </div>
     );

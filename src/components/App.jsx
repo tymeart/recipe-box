@@ -103,6 +103,24 @@ class App extends Component {
     // add message about recipe being saved
   }
 
+  handleCancel = (event) => {
+    event.preventDefault();
+    if (this.state.displayEditForm) {
+      const currentRecipeTitle = `_tymeart_recipes_${this.state.title}`;
+      const currentRecipe = [this.state.title, localStorage.getItem(currentRecipeTitle)];
+      this.setState({
+        displayRecipe: currentRecipe,
+        displayAddRecipeForm: false,
+        displayEditForm: false
+      });
+    } else {
+      this.setState({
+        displayAddRecipeForm: false,
+        displayEditForm: false
+      });
+    }
+  }
+
   handleDelete = (recipeTitle, event) => {
     event.preventDefault();
     localStorage.removeItem(`_tymeart_recipes_${recipeTitle}`);
@@ -163,6 +181,7 @@ class App extends Component {
           displayEditForm={this.state.displayEditForm}
           handleEditButtonClick={this.handleEditButtonClick}
           handleEditSubmit={this.handleEditSubmit}
+          handleCancel={this.handleCancel}
           handleDelete={this.handleDelete}
           handleNewRecipeSubmit={this.handleNewRecipeSubmit}
           titleValue={this.state.title}
