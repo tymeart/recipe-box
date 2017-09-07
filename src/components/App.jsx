@@ -46,7 +46,8 @@ class App extends Component {
     event.preventDefault();
     this.setState({
       displayRecipe: null,
-      displayAddRecipeForm: true
+      displayAddRecipeForm: true,
+      displayEditForm: false
     });
   }
 
