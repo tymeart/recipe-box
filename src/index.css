@@ -118,8 +118,14 @@ form button {
 }
 
 .recipe-heading {
+  border-bottom: 1px solid #DDD;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.recipe-heading h2 {
+  margin-bottom: 12px;
 }
 
 .ingredients, .instructions {
