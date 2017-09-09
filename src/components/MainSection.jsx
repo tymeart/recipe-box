@@ -10,7 +10,7 @@ class MainSection extends Component {
       <main>
         <CSSTransitionGroup
           transitionName="recipeDetails"
-          transitionEnterTimeout={1000}
+          transitionEnterTimeout={800}
           transitionLeaveTimeout={400}
         >
           {this.props.recipe &&
@@ -24,8 +24,8 @@ class MainSection extends Component {
 
         <CSSTransitionGroup
           transitionName="recipeForm"
-          transitionEnterTimeout={1000}
-          transitionLeaveTimeout={400}
+          transitionEnterTimeout={1200}
+          transitionLeaveTimeout={500}
         >
           {this.props.displayAddRecipeForm &&
             <AddRecipeForm
@@ -37,8 +37,8 @@ class MainSection extends Component {
 
         <CSSTransitionGroup
           transitionName="editForm"
-          transitionEnterTimeout={1000}
-          transitionLeaveTimeout={400}
+          transitionEnterTimeout={1200}
+          transitionLeaveTimeout={500}
         >
           {this.props.displayEditForm &&
             <EditRecipeForm

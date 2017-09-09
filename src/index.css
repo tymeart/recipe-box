@@ -130,11 +130,15 @@ pre {
   opacity: 0.01;
 }
 
-.recipeDetails-enter.recipeDetails-enter-active,
+.recipeDetails-enter.recipeDetails-enter-active {
+  opacity: 1;
+  transition: opacity 800ms ease-in;
+}
+
 .recipeForm-enter.recipeForm-enter-active,
 .editForm-enter.editForm-enter-active {
   opacity: 1;
-  transition: opacity 1000ms ease-in;
+  transition: opacity 1200ms ease-in;
 }
 
 .recipeDetails-leave,
@@ -143,9 +147,13 @@ pre {
   opacity: 1;
 }
 
-.recipeDetails-leave.recipeDetails-leave-active,
+.recipeDetails-leave.recipeDetails-leave-active {
+  opacity: 0.01;
+  transition: opacity 400ms ease-in;
+}
+
 .recipeForm-leave.recipeForm-leave-active,
 .editForm-leave.editForm-leave-active {
   opacity: 0.01;
-  transition: opacity 400ms ease-in;
+  transition: opacity 500ms ease-in;
 }
