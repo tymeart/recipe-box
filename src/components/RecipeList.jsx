@@ -9,8 +9,8 @@ const RecipeList = (props) => {
         handleRecipeClick={props.handleRecipeClick}
         recipe={recipe}
       />
-      );
-    });
+    );
+  });
 
   return (
     <ul>

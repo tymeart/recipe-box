@@ -123,3 +123,29 @@ pre {
   padding-left: 25px;
   white-space: pre-wrap;
 }
+
+.recipeDetails-enter,
+.recipeForm-enter,
+.editForm-enter {
+  opacity: 0.01;
+}
+
+.recipeDetails-enter.recipeDetails-enter-active,
+.recipeForm-enter.recipeForm-enter-active,
+.editForm-enter.editForm-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.recipeDetails-leave,
+.recipeForm-leave,
+.editForm-leave {
+  opacity: 1;
+}
+
+.recipeDetails-leave.recipeDetails-leave-active,
+.recipeForm-leave.recipeForm-leave-active,
+.editForm-leave.editForm-leave-active {
+  opacity: 0.01;
+  transition: opacity 400ms ease-in;
+}

@@ -175,6 +175,7 @@ class App extends Component {
           handleAddRecipeButtonClick={this.handleAddRecipeButtonClick}
           recipes={this.state.recipes}
         />
+
         <MainSection id="main"
           recipe={this.state.displayRecipe}
           displayAddRecipeForm={this.state.displayAddRecipeForm}
