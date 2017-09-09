@@ -55,6 +55,13 @@ body {
   width: 10rem;
 }
 
+.Sidebar button,
+.recipe-list-item:hover,
+form button,
+.recipe-heading button {
+  cursor: pointer;
+}
+
 main {
   padding: 40px 70px;
   width: 80vw;
