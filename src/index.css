@@ -19,6 +19,7 @@ body {
   font-size: 1.2rem;
   height: 100vh;
   overflow-y: auto;
+  padding-bottom: 40px;
   text-align: center;
   width: 25vw;
 }
