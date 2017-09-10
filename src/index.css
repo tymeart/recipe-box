@@ -1,5 +1,6 @@
 body {
   box-sizing: border-box;
+  color: #261D1B;
   font-family: 'Merriweather', serif;
   font-size: 16px;
   margin: 0;
@@ -12,7 +13,6 @@ body {
 
 .Sidebar {
   background-color: #F57D0C;
-  border-right: 1px solid #DDD;
   color: #FFF;
   display: flex;
   flex-direction: column;
@@ -36,19 +36,19 @@ body {
 }
 
 .Sidebar li {
-  border-top: 1px solid #DDD;
+  border-top: 1px solid #EECFB4;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
 .Sidebar li:last-child {
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #EECFB4;
 }
 
 .Sidebar button {
   align-self: center;
   background-color: #F57D0C;
-  border-color: #FFF;
+  border: 2px solid #FFF;
   border-radius: 20px;
   color: #FFF;
   font-size: 1rem;
@@ -146,7 +146,7 @@ form button {
 }
 
 .recipe-heading {
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #EECFB4;
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
