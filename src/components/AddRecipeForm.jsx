@@ -38,14 +38,15 @@ class AddRecipeForm extends Component {
           <input id="title" type="text" value={this.state.title} onChange={this.handleTitleChange} />
 
           <label htmlFor="ingredients">Ingredients</label>
+          <p className="quiet">Separate multiple items with a comma and space (e.g. lettuce, tomato, cheese)</p>
           <textarea id="ingredients" value={this.state.ingredients} onChange={this.handleIngredientsChange} />
 
           <label htmlFor="instructions">Instructions</label>
           <textarea id="instructions" value={this.state.instructions} onChange={this.handleInstructionsChange} />
 
           <div className="submitOptions">
-            <button onClick={this.props.handleNewRecipeSubmit.bind(this, formData)}>Save</button>
-            <button onClick={this.props.handleCancel}>Cancel</button>
+            <button onClick={this.props.handleNewRecipeSubmit.bind(this, formData)} className="primary">Save</button>
+            <button onClick={this.props.handleCancel} className="neutral">Cancel</button>
           </div>
         </form>
       </div>
