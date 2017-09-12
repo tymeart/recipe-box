@@ -54,7 +54,13 @@ body {
   font-size: 1rem;
   height: 40px;
   letter-spacing: 0.085rem;
+  transition: background-color 1s ease;
   width: 10rem;
+}
+
+.Sidebar button:hover {
+  background-color: #FFF;
+  color: #F57D0C;
 }
 
 .Sidebar button,
@@ -119,8 +125,24 @@ form button {
   background-color: #F57D0C;
 }
 
+.secondary {
+  transition: background-color 0.5s ease;
+}
+
+.secondary:hover {
+  background-color: #F57D0C;
+}
+
 .neutral {
   background-color: #CDC4BC;
+}
+
+.negative {
+  transition: background-color 0.5s ease;
+}
+
+.negative:hover {
+  background-color: #DE2718;
 }
 
 .quiet {
