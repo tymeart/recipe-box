@@ -80,7 +80,9 @@ class App extends Component {
       this.updateRecipeState();
     }
 
-    // add message about recipe being saved
+    this.setState({
+      displayRecipe: [formData.title, localStorage.getItem(newRecipeTitle)]
+    });
   }
 
   handleEditSubmit = (formData, event) => {
@@ -100,7 +102,9 @@ class App extends Component {
       this.updateRecipeState();
     }
 
-    // add message about recipe being saved
+    this.setState({
+      displayRecipe: [formData.title, localStorage.getItem(newRecipeTitle)]
+    });
   }
 
   handleCancel = (event) => {
