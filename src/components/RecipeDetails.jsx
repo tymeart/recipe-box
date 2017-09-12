@@ -9,8 +9,7 @@ const RecipeDetails = (props) => {
       <div className="recipe-heading">
         <h2>{currentRecipeTitle}</h2>
         <div>
-          <button onClick={props.handleEditButtonClick.bind(this, props.recipe)}>Edit</button>
-          <button onClick={props.handleDelete.bind(this, currentRecipeTitle)}>Delete</button>
+          <button onClick={props.handleEditButtonClick.bind(this, props.recipe)} className="secondary">Edit</button>
         </div>
       </div>
 

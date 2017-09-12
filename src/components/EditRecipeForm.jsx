@@ -31,7 +31,10 @@ class EditRecipeForm extends Component {
 
     return (
       <div>
-        <h2>Edit Recipe</h2>
+        <heading className="recipe-heading">
+          <h2>Edit Recipe</h2>
+          <button onClick={this.props.handleDelete.bind(this, this.state.currentTitle)} className="negative">Delete</button>
+        </heading>
         <form>
           <label htmlFor="title">Recipe Title</label>
           <input id="title" type="text" value={this.state.currentTitle} onChange={this.handleTitleChange} />

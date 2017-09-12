@@ -131,7 +131,9 @@ form button {
 }
 
 .RecipeDetails button,
+.recipe-heading button,
 .submitOptions button {
+  border-width: 0;
   border-radius: 20px;
   color: #FFF;
   font-size: 1rem;

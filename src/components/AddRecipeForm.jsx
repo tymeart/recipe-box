@@ -32,7 +32,9 @@ class AddRecipeForm extends Component {
 
     return (
       <div>
-        <h2>Add a New Recipe</h2>
+        <heading className="recipe-heading">
+          <h2>Add a New Recipe</h2>
+        </heading>
         <form>
           <label htmlFor="title">Recipe Title</label>
           <input id="title" type="text" value={this.state.title} onChange={this.handleTitleChange} />

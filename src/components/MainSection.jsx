@@ -17,7 +17,6 @@ class MainSection extends Component {
             <RecipeDetails
               recipe={this.props.recipe}
               handleEditButtonClick={this.props.handleEditButtonClick}
-              handleDelete={this.props.handleDelete}
             />
           }
         </CSSTransitionGroup>
@@ -46,6 +45,7 @@ class MainSection extends Component {
               ingredientsValue={this.props.ingredientsValue}
               instructionsValue={this.props.instructionsValue}
               handleEditSubmit={this.props.handleEditSubmit}
+              handleDelete={this.props.handleDelete}
               handleCancel={this.props.handleCancel}
             />
           }
