@@ -1,4 +1,4 @@
-This is a recipe app following [Free Code Camp](https://www.freecodecamp.org/challenges/build-a-recipe-box)'s specifications:
+This is a recipe app following [Free Code Camp](https://www.freecodecamp.org/challenges/build-a-recipe-box)'s specifications for the project:
 * You can create recipes that have names and ingredients.
 * You can see an index view where the names of all the recipes are visible.
 * You can click into any of those recipes to view it.
