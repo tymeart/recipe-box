@@ -4,12 +4,24 @@ import { ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from '../actions/actionTypes';
 export default recipes = (state = initialState.recipes, action) => {
   switch (action.type) {
     case ADD_RECIPE:
-      return [...state, action.data];
+      return [
+        ...state,
+        {
+          id: action.id,
+          recipe: action.recipe
+        }
+      ];
     case EDIT_RECIPE:
-      return [...state, action.data];
+      const newState = state.filter(recipe => recipe.id !== action.id);
+      return [
+        ...newState,
+        {
+          id: action.id,
+          recipe: action.recipe
+        }
+       ];
     case DELETE_RECIPE:
-      // filter state by recipe id
-      return action;
+      return state.filter(recipe => recipe.id !== action.id);
     default:
       return state;
   }
