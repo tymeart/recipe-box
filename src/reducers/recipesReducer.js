@@ -8,7 +8,7 @@ export default recipes = (state = initialState.recipes, action) => {
         ...state,
         {
           id: action.id,
-          recipe: action.recipe
+          recipe: action.data
         }
       ];
     case EDIT_RECIPE:
@@ -17,7 +17,7 @@ export default recipes = (state = initialState.recipes, action) => {
         ...newState,
         {
           id: action.id,
-          recipe: action.recipe
+          recipe: action.data
         }
        ];
     case DELETE_RECIPE:
