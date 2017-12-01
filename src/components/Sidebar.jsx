@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as recipeActions from '../actions/recipeActions';
 import RecipeList from './RecipeList';
 
 class Sidebar extends Component {
@@ -16,4 +19,14 @@ class Sidebar extends Component {
   }
 }
 
-export default Sidebar;
+function mapStateToProps({ recipes }) {
+  return { recipes };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    recipeActions: bindActionCreators(recipeActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
