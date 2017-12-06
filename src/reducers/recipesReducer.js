@@ -1,25 +1,25 @@
 import initialState from './initialState';
 import { ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from '../actions/actionTypes';
 
-export default recipes = (state = initialState.recipes, action) => {
+export default recipes = (state = initialState, action) => {
   switch (action.type) {
     case ADD_RECIPE:
-      return [
+      return {
         ...state,
         {
-          id: action.id,
-          recipe: action.data
+          id: state.id++,
+          recipe: action.recipe
         }
-      ];
+      };
     case EDIT_RECIPE:
       const newState = state.filter(recipe => recipe.id !== action.id);
-      return [
+      return {
         ...newState,
         {
-          id: action.id,
-          recipe: action.data
+          id: action.recipe.id,
+          recipe: action.recipe
         }
-       ];
+      };
     case DELETE_RECIPE:
       return state.filter(recipe => recipe.id !== action.id);
     default:

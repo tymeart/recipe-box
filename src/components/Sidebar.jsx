@@ -19,8 +19,10 @@ class Sidebar extends Component {
   }
 }
 
-function mapStateToProps({ recipes }) {
-  return { recipes };
+function mapStateToProps(state) {
+  return {
+    recipes: state.recipes
+  };
 }
 
 function mapDispatchToProps(dispatch) {

@@ -1,20 +1,16 @@
 import { ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from './actionTypes';
 
-let todoId = 0;
-
 export const addRecipe = recipe => {
   return {
     type: ADD_RECIPE,
-    id: todoId++,
-    data: recipe
+    recipe
   }
 }
 
-export const editRecipe = (id, recipe) => {
+export const editRecipe = id => {
   return {
     type: EDIT_RECIPE,
-    id,
-    data: recipe
+    id
   }
 }
 
