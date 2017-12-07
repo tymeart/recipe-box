@@ -1,5 +1,5 @@
 import initialState from './initialState';
-import { ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from '../actions/actionTypes';
+import * from '../actions/actionTypes';
 
 export default recipes = (state = initialState, action) => {
   switch (action.type) {
@@ -22,6 +22,33 @@ export default recipes = (state = initialState, action) => {
       };
     case DELETE_RECIPE:
       return state.filter(recipe => recipe.id !== action.id);
+    case DISPLAY_RECIPE:
+      return {
+        ...state,
+        {
+          displayRecipe: true,
+          displayAddForm: false,
+          displayEditForm: false
+        }
+      };
+    case DISPLAY_ADD_FORM:
+      return {
+        ...state,
+        {
+          displayRecipe: false,
+          displayAddForm: true,
+          displayEditForm: false
+        }
+      };
+    case DISPLAY_EDIT_FORM:
+      return {
+        ...state,
+        {
+          displayRecipe: false,
+          displayAddForm: false,
+          displayEditForm: true
+        }
+      };
     default:
       return state;
   }

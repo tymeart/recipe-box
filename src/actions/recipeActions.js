@@ -1,4 +1,4 @@
-import { ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from './actionTypes';
+import * from './actionTypes';
 
 export const addRecipe = recipe => {
   return {
@@ -17,6 +17,26 @@ export const editRecipe = id => {
 export const deleteRecipe = id => {
   return {
     type: DELETE_RECIPE,
+    id
+  }
+}
+
+export const displayRecipe = id => {
+  return {
+    type: DISPLAY_RECIPE,
+    id
+  }
+}
+
+export const displayAddForm = () => {
+  return {
+    type: DISPLAY_ADD_FORM
+  }
+}
+
+export const displayEditForm = id => {
+  return {
+    type: DISPLAY_EDIT_FORM,
     id
   }
 }

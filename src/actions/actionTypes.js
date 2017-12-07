@@ -1,3 +1,6 @@
 export const ADD_RECIPE = 'ADD_RECIPE';
 export const EDIT_RECIPE = 'EDIT_RECIPE';
 export const DELETE_RECIPE = 'DELETE_RECIPE';
+export const DISPLAY_RECIPE = 'DISPLAY_RECIPE';
+export const DISPLAY_ADD_FORM = 'DISPLAY_ADD_FORM';
+export const DISPLAY_EDIT_FORM = 'DISPLAY_EDIT_FORM';
