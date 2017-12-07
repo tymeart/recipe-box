@@ -22,7 +22,7 @@ export default recipes = (state = initialState, action) => {
       };
     case DELETE_RECIPE:
       return state.filter(recipe => recipe.id !== action.id);
-    case DISPLAY_RECIPE:
+    case RECIPE_SELECTED:
       return {
         ...state,
         {

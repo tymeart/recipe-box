@@ -9,7 +9,7 @@ class Sidebar extends Component {
     return (
       <div className="Sidebar">
         <h1>Recipe Box</h1>
-        <button onClick={this.props.handleAddRecipeButtonClick}>Add a Recipe</button>
+        <button onClick={this.props.displayAddForm}>Add a Recipe</button>
         <RecipeList
           handleRecipeClick={this.props.handleRecipeClick}
           recipes={this.props.recipes}

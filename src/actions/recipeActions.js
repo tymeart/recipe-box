@@ -21,9 +21,9 @@ export const deleteRecipe = id => {
   }
 }
 
-export const displayRecipe = id => {
+export const selectRecipe = id => {
   return {
-    type: DISPLAY_RECIPE,
+    type: RECIPE_SELECTED,
     id
   }
 }
