@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as recipeActions from '../actions/recipeActions';
 import RecipeDetails from './RecipeDetails';
 import AddRecipeForm from './AddRecipeForm';
 import EditRecipeForm from './EditRecipeForm';
@@ -55,4 +58,16 @@ class MainSection extends Component {
   }
 }
 
-export default MainSection;
+function mapStateToProps(state) {
+  return {
+    recipes: state.recipes
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    recipeActions: bindActionCreators(recipeActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainSection);
