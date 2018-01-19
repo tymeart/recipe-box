@@ -1,53 +1,43 @@
 import initialState from './initialState';
-import * from '../actions/actionTypes';
+import * as types from '../actions/actionTypes';
 
-export default recipes = (state = initialState, action) => {
+export default function (state = initialState, action) {
   switch (action.type) {
-    case ADD_RECIPE:
+    case types.ADD_RECIPE:
       return {
         ...state,
-        {
-          id: state.id++,
-          recipe: action.recipe
-        }
+        id: state.id++,
+        recipe: action.recipe
       };
-    case EDIT_RECIPE:
+    case types.EDIT_RECIPE:
       const newState = state.filter(recipe => recipe.id !== action.id);
       return {
         ...newState,
-        {
-          id: action.recipe.id,
-          recipe: action.recipe
-        }
+        id: action.recipe.id,
+        recipe: action.recipe
       };
-    case DELETE_RECIPE:
+    case types.DELETE_RECIPE:
       return state.filter(recipe => recipe.id !== action.id);
-    case RECIPE_SELECTED:
+    case types.RECIPE_SELECTED:
       return {
         ...state,
-        {
-          displayRecipe: true,
-          displayAddForm: false,
-          displayEditForm: false
-        }
+        displayRecipe: true,
+        displayAddForm: false,
+        displayEditForm: false
       };
-    case DISPLAY_ADD_FORM:
+    case types.DISPLAY_ADD_FORM:
       return {
         ...state,
-        {
-          displayRecipe: false,
-          displayAddForm: true,
-          displayEditForm: false
-        }
+        displayRecipe: false,
+        displayAddForm: true,
+        displayEditForm: false
       };
-    case DISPLAY_EDIT_FORM:
+    case types.DISPLAY_EDIT_FORM:
       return {
         ...state,
-        {
-          displayRecipe: false,
-          displayAddForm: false,
-          displayEditForm: true
-        }
+        displayRecipe: false,
+        displayAddForm: false,
+        displayEditForm: true
       };
     default:
       return state;
