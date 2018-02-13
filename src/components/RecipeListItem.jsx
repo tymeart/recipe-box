@@ -6,7 +6,7 @@ const RecipeListItem = (props) => {
       className="recipe-list-item"
       onClick={props.handleRecipeClick}
     >
-      {props.recipe[0]}
+      {props.recipe.title}
     </li>
   );
 }
