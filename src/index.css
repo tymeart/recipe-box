@@ -121,36 +121,6 @@ form button {
   width: 100px;
 }
 
-.primary {
-  background-color: #F57D0C;
-}
-
-.secondary {
-  transition: background-color 0.5s ease;
-}
-
-.secondary:hover {
-  background-color: #F57D0C;
-}
-
-.neutral {
-  background-color: #CDC4BC;
-}
-
-.negative {
-  transition: background-color 0.5s ease;
-}
-
-.negative:hover {
-  background-color: #DE2718;
-}
-
-.quiet {
-  color: #898480;
-  font-size: 0.7rem;
-  margin-top: 0;
-  margin-bottom: 8px;
-}
 
 .RecipeDetails button,
 .recipe-heading button,
@@ -163,6 +133,42 @@ form button {
   letter-spacing: 0.085rem;
   margin: 0 3px;
   width: 100px;
+}
+
+.primary {
+  background-color: #F57D0C;
+}
+
+button.secondary {
+  background-color: #F57D0C;
+  color: #FFF;
+  transition: background-color 0.5s ease;
+}
+
+button.secondary:hover {
+  background: none;
+  color: #F57D0C;
+}
+
+.neutral {
+  background-color: #CDC4BC;
+}
+
+button.negative {
+  background-color: #DE2718;
+  transition: background-color 0.5s ease;
+}
+
+button.negative:hover {
+  background: none;
+  color: #DE2718;
+}
+
+.quiet {
+  color: #898480;
+  font-size: 0.7rem;
+  margin-top: 0;
+  margin-bottom: 8px;
 }
 
 .RecipeDetails ul,
