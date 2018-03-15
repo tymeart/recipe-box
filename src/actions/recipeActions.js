@@ -31,11 +31,11 @@ export const deleteRecipe = id => {
 // }
 
 // export const displayAddForm = () => {
-//   return {
-//     type: types.DISPLAY_ADD_FORM
-//   }
+  // return {
+  //   type: types.DISPLAY_ADD_FORM
+  // }
 // }
-//
+
 // export const displayEditForm = id => {
 //   return {
 //     type: types.DISPLAY_EDIT_FORM,

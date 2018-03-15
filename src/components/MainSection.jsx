@@ -19,7 +19,7 @@ class MainSection extends Component {
           {this.props.recipe &&
             <RecipeDetails
               recipe={this.props.recipe}
-              handleEditButtonClick={this.props.handleEditButtonClick}
+              handleEditButtonClick={this.props.displayEditForm}
             />
           }
         </CSSTransitionGroup>
@@ -29,7 +29,7 @@ class MainSection extends Component {
           transitionEnterTimeout={1200}
           transitionLeaveTimeout={500}
         >
-          {this.props.displayAddRecipeForm &&
+          {this.props.displayAddForm &&
             <AddRecipeForm
               handleNewRecipeSubmit={this.props.handleNewRecipeSubmit}
               handleCancel={this.props.handleCancel}
@@ -47,8 +47,8 @@ class MainSection extends Component {
               titleValue={this.props.titleValue}
               ingredientsValue={this.props.ingredientsValue}
               instructionsValue={this.props.instructionsValue}
-              handleEditSubmit={this.props.handleEditSubmit}
-              handleDelete={this.props.handleDelete}
+              handleEditSubmit={this.props.editRecipe}
+              handleDelete={this.props.deleteRecipe}
               handleCancel={this.props.handleCancel}
             />
           }

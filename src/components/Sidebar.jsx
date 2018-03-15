@@ -6,12 +6,13 @@ import RecipeList from './RecipeList';
 
 class Sidebar extends Component {
   render() {
+    console.log(this.props)
     return (
       <div className="Sidebar">
         <h1>Recipe Box</h1>
         <button onClick={this.props.displayAddForm}>Add a Recipe</button>
         <RecipeList
-          handleRecipeClick={this.props.handleRecipeClick}
+          handleRecipeClick={this.props.selectRecipe}
           recipes={this.props.recipes}
         />
       </div>
@@ -25,10 +26,8 @@ function mapStateToProps(state) {
   };
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     recipeActions: bindActionCreators(recipeActions, dispatch)
-//   };
-// }
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ recipeActions: recipeActions }, dispatch);
+}
 
-export default connect(mapStateToProps)(Sidebar);
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

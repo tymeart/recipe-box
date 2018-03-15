@@ -22,19 +22,21 @@ export default function (state = initialState, action) {
         state.recipes.filter(recipe => recipe.id !== action.id)
       ];
     // case types.RECIPE_SELECTED:
-    //   return {
-    //     ...state,
-    //     displayRecipe: true,
-    //     displayAddForm: false,
-    //     displayEditForm: false
-    //   };
+    //  return {
+        // ...state,
+        // displayRecipe: true,
+        // displayAddForm: false,
+        // displayEditForm: false
+      // };
     // case types.DISPLAY_ADD_FORM:
-    //   return {
+    //   return [
     //     ...state,
-    //     displayRecipe: false,
-    //     displayAddForm: true,
-    //     displayEditForm: false
-    //   };
+    //     {
+    //       displayRecipe: false,
+    //       displayAddForm: true,
+    //       displayEditForm: false
+    //     }
+    //   ];
     // case types.DISPLAY_EDIT_FORM:
     //   return {
     //     ...state,
